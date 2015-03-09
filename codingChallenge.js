@@ -22,8 +22,6 @@ occupation: 'President of the Galaxy'
 ]
 */
 
-// var _ = require("lodash"); // import lodash
-
 var awesomeArray = [ // assign the array to the variable awesomeArray
   {
     name: 'Bob',
@@ -74,20 +72,3 @@ $(document).ready(function () {
 
 // plain JavaScript implementation
 document.getElementById("awesome-index").textContent = computeAverage(awesomeArray);
-
-/*
-Create a simple http server using node. *
-This server should respond to a root-url request with a file called index.html.
-Do not use ExpressJS. Your code should have error checking and at least one
-callback. Put five or more html elements in your index.html.
-One of the elements should be a link to an external page.
-Things to research: node.js, callbacks, the fs module, the http module.
-*/
-
-/*
-Model a library using objects. *
-A library contains shelves. Shelves contain books. Books have an author and
-a title. Give the library methods to add and remove a shelf. A shelf should have
-methods to add/remove a book. Use a modular approach so that each type of object
-is contained in its own file. Add any functionality you think appropriate.
-*/
