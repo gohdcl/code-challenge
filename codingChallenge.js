@@ -21,8 +21,8 @@ occupation: 'President of the Galaxy'
 }
 ]
 */
-// lodash + jQuery implementation
-var _ = require("lodash"); // import lodash
+
+// var _ = require("lodash"); // import lodash
 
 var awesomeArray = [ // assign the array to the variable awesomeArray
   {
@@ -34,6 +34,16 @@ var awesomeArray = [ // assign the array to the variable awesomeArray
     name: 'Alice',
     occupation: 'programmer',
     awesomeIndex: 9,
+  },
+  {
+    name: 'Jan',
+    occupation: 'programmer',
+    awesomeIndex: 11,
+  },
+  {
+    name: 'Derrick',
+    occupation: 'not a programmer',
+    awesomeIndex: 12,
   },
   {
     name: 'Zaphod',
@@ -55,10 +65,15 @@ function computeAverage (anArray) {
   return average;
 } // end computeAverage
 
+// jQuery implementation
 // insert the result of computeAverage on awesomeArray into the tag with ID
 // awesome-index using a jQuery selector
-$("#awesome-index").text(computeAverage(awesomeArray));
+$(document).ready(function () {
+  $("#awesome-index").text(computeAverage(awesomeArray));
+}) // end .ready
+
 // plain JavaScript implementation
+document.getElementById("awesome-index").textContent = computeAverage(awesomeArray);
 
 /*
 Create a simple http server using node. *
