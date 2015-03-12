@@ -49,11 +49,13 @@ var awesomeArray = [ // assign the array to the variable awesomeArray
   }
 ];
 
+// plain JavaScript implementation
+
 // a function for computing the average awesomeIndex of programmers
 // takes an array of objects with occupation and awesomeIndex properties
 function computeAverage (anArray) {
   var average, sum = 0, count = 0; // initialize variables
-  anArray.forEach(function (object) {
+  anArray.forEach(function(object) {
     if (object.occupation === "programmer") {
       count++;
       sum += object.awesomeIndex;
@@ -63,12 +65,4 @@ function computeAverage (anArray) {
   return average;
 } // end computeAverage
 
-// jQuery implementation
-// insert the result of computeAverage on awesomeArray into the tag with ID
-// awesome-index using a jQuery selector
-$(document).ready(function () {
-  $("#awesome-index").text(computeAverage(awesomeArray));
-}) // end .ready
-
-// plain JavaScript implementation
 document.getElementById("awesome-index").textContent = computeAverage(awesomeArray);
