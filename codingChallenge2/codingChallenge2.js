@@ -14,6 +14,7 @@ outside its directory results in a status code 500 error.
 var http = require("http"); // import http module
 var fs = require("fs"); // import fs module
 var url = require("url");
+var port = process.env.PORT || 3000;
 var path;
 
 // create a http server; assign it to variable server
@@ -42,5 +43,5 @@ var server = http.createServer(function(request, response) {
       }); // end .readFile
     } // end function
   ); // end .createServer
-server.listen(3000); // the server listens on port 3000
+server.listen(port); // the server listens on port 3000
 console.log("node.js server active"); // display a console message that the server is live
