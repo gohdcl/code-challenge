@@ -9,30 +9,32 @@ Things to research: node.js, callbacks, the fs module, the http module.
 var http = require("http"); // import http module
 var fs = require("fs"); // import fs module
 var url = require("url");
-
+var path;
+// var path = require("path");
 // create a http server; assign it to variable server
 var server = http.createServer(function(request, response) {
-    console.log(url.parse(request.url));
-    var path = "./index.html";
-    if(!path) { // if the file doesn't exist
+    reqURL = url.parse(request.url);
+
+    if(reqURL.path === "/") { // if root-url is requested
+      path = "./index.html";
+    } /* end if */ else { // a different url was requested or index.html does not exist
       // return a 404 message
+      path = "";
       response.writeHeader(404, { "Content-Type": "text/plain" });
       response.write("404 File Not Found\n");
       response.end();
-    } /* end if */ else {
-      fs.readFile(path, "binary", function(err, file) {
-        if (err) { // if an error is thrown while reading the file
-          // server responds with an error
-          response.writeHeader(500, { "Content-Type": "text/plain" });
-          response.write(err + "\n");
-          response.end();
-          } /* end if */ else { // else write the file
-          response.writeHeader(200);
-          response.write(file, "binary");
-          response.end();
-          } // end else
-        }); // end .readFile
-      } // end else
+    }
+    fs.readFile(path, "binary", function(err, file) {
+      if (err) { // if an error is thrown while reading the file
+        // server responds with an error
+        response.writeHeader(500, { "Content-Type": "text/plain" });
+        response.end("500 An Error Occurred");
+        } /* end if */ else { // else write the file
+        response.writeHeader(200);
+        response.write(file, "binary");
+        response.end();
+        } // end else
+      }); // end .readFile
     } // end function
   ); // end .createServer
 server.listen(3000);
