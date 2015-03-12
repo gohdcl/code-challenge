@@ -10,7 +10,7 @@ var http = require("http"); // import http module
 var fs = require("fs"); // import fs module
 var url = require("url");
 var path;
-// var path = require("path");
+
 // create a http server; assign it to variable server
 var server = http.createServer(function(request, response) {
     reqURL = url.parse(request.url);
@@ -19,7 +19,7 @@ var server = http.createServer(function(request, response) {
       path = "./index.html";
     } /* end if */ else { // a different url was requested or index.html does not exist
       // return a 404 message
-      path = "";
+      path = ""; // path must be a string, so empty string if a different url is requested
       response.writeHeader(404, { "Content-Type": "text/plain" });
       response.write("404 File Not Found\n");
       response.end();
