@@ -6,6 +6,11 @@ callback. Put five or more html elements in your index.html.
 One of the elements should be a link to an external page.
 Things to research: node.js, callbacks, the fs module, the http module.
 */
+
+/*
+Note: This file must be run inside its working directory. Running it from
+outside its directory results in a status code 500 error.
+*/
 var http = require("http"); // import http module
 var fs = require("fs"); // import fs module
 var url = require("url");
@@ -13,7 +18,7 @@ var path;
 
 // create a http server; assign it to variable server
 var server = http.createServer(function(request, response) {
-    reqURL = url.parse(request.url);
+    var reqURL = url.parse(request.url);
 
     if(reqURL.path === "/") { // if root-url is requested
       path = "./index.html";
@@ -37,5 +42,5 @@ var server = http.createServer(function(request, response) {
       }); // end .readFile
     } // end function
   ); // end .createServer
-server.listen(3000);
-console.log("node.js server active");
+server.listen(3000); // the server listens on port 3000
+console.log("node.js server active"); // display a console message that the server is live
