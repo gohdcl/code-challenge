@@ -14,8 +14,16 @@ outside its directory results in a status code 500 error.
 var http = require("http"); // import http module
 var fs = require("fs"); // import fs module
 var url = require("url");
+var htmlInject = require("./htmlInject.js");
 var port = process.env.PORT || 3000;
 var path;
+
+fs.writeFile("index.html", htmlInject(), function(err) {
+  if (err) {
+    return console.log(err);
+  } // end if
+  console.log("htmlInject > test.html");
+});
 
 // create a http server; assign it to variable server
 var server = http.createServer(function(request, response) {
