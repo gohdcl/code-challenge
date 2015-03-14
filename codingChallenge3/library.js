@@ -7,10 +7,10 @@ is contained in its own file. Add any functionality you think appropriate.
 */
 
 function Library(name) {
-  this.name = name;
-  this.shelves = []; // shelves is an array of shelf objects
+  this.name = name; // the name of the library
+  this.shelves = []; // shelves is an array of shelf objects; starts empty
 } // end Library constructor
 
 Library.prototype.addShelf = function() {
-
+  this.shelves.push(new Shelf());
 } // end addshelf

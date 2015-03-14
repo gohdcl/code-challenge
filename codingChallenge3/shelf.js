@@ -1,11 +1,11 @@
 function Shelf() {
   this.books = [];
+  this.numberOfBooks = this.books.length;
 } // end shelf constructor
 
 Shelf.prototype.addBook = function(title, author) {
-  var newBook = new Book(title, author);
-  this.books.push(newBook);
-} // end addBook
+  this.books.push(new Book(title, author));
+}; // end addBook
 
 Shelf.prototype.removeBook = function(searchKey) {
   // loop through all books in the this.books array
@@ -18,5 +18,5 @@ Shelf.prototype.removeBook = function(searchKey) {
         this.books.splice(index, 1); // remove it from the array
       } // end if
     } // end if
-  }
+  } // end .forEach
 }; // end removeBook
