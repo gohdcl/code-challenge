@@ -19,10 +19,10 @@ var port = process.env.PORT || 3000;
 var path;
 
 fs.writeFile("index.html", htmlInject(), function(err) {
-  if (err) {
-    return console.log(err);
+  if (err) { // if an error is thrown
+    return console.log(err); // print the error to console log
   } // end if
-  console.log("htmlInject > test.html");
+  console.log("htmlInject.js > test.html"); // confirmation log
 });
 
 // create a http server; assign it to variable server
