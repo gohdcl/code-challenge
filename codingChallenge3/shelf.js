@@ -1,22 +1,25 @@
-function Shelf() {
-  this.books = [];
-  this.numberOfBooks = this.books.length;
+// Shelf object constructor
+function Shelf(name) {
+  this.name = name;
+  this.books = []; // initializes as an empty shelf
+  this.numberOfBooks = this.books.length; // keep track of the number of books
 } // end shelf constructor
 
+// adding a book
 Shelf.prototype.addBook = function(title, author) {
   this.books.push(new Book(title, author));
+  this.numberOfBooks++;
 }; // end addBook
 
+// removing a book
 Shelf.prototype.removeBook = function(searchKey) {
   // loop through all books in the this.books array
-  this.books.forEach(book) {
+  for(var i = 0; i < this.books.length; i++) {
     // if a book with a title or author matching the searchKey is found
-    if (book.title === searchKey || book.author === searchKey) {
+    if (this.books[i].title === searchKey || this.books[i].author === searchKey) {
       console.log(book.title + " is being removed"); // confirm the book is being removed
-      var index = this.books.indexOf(book); // get the index of the book
-      if (index > -1) { // index should not be negative
-        this.books.splice(index, 1); // remove it from the array
-      } // end if
+      this.books.splice(index, 1); // remove it from the array
+      this.numberOfBooks--;
     } // end if
-  } // end .forEach
+  } // end for
 }; // end removeBook

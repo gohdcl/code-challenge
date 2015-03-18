@@ -11,6 +11,16 @@ function Library(name) {
   this.shelves = []; // shelves is an array of shelf objects; starts empty
 } // end Library constructor
 
-Library.prototype.addShelf = function() {
-  this.shelves.push(new Shelf());
-} // end addshelf
+Library.prototype.addShelf = function(name) {
+  this.shelves.push(new Shelf(name));
+} // end addShelf
+
+Library.prototype.removeShelf = function(searchKey) {
+  // loop through each shelf in the this.shelves array
+  for(var i = 0; i < this.shelves.length; i++) {
+    if(this.shelves.name === searchKey) {
+      console.log(this.shelves[i].name + " is being removed"); // confirm the shelf is being removed
+      this.shelves.splice(i, 1); // remove it from the array
+    } // end if
+  } // end for
+} // end removeShelf
