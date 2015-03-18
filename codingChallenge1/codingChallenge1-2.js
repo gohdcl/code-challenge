@@ -24,28 +24,18 @@ occupation: 'President of the Galaxy'
 
 var awesomeArray = [ // assign the array to the variable awesomeArray
   {
-    name: 'Bob',
-    occupation: 'programmer',
-    awesomeIndex: 7,
+  name: 'Bob',
+  occupation: 'programmer',
+  awesomeIndex: 7,
   },
   {
-    name: 'Alice',
-    occupation: 'programmer',
-    awesomeIndex: 9,
+  name: 'Alice',
+  occupation: 'programmer',
+  awesomeIndex: 9,
   },
   {
-    name: 'Jan',
-    occupation: 'programmer',
-    awesomeIndex: 11,
-  },
-  {
-    name: 'Derrick',
-    occupation: 'not a programmer',
-    awesomeIndex: 12,
-  },
-  {
-    name: 'Zaphod',
-    occupation: 'President of the Galaxy' // note: not a programmer
+  name: 'Zaphod',
+  occupation: 'President of the Galaxy' // note: not a programmer
   }
 ];
 

@@ -26,31 +26,22 @@ $(document).ready(function() {
 
   var awesomeArray = [ // assign the array to the variable awesomeArray
     {
-      name: 'Bob',
-      occupation: 'programmer',
-      awesomeIndex: 8,
+    name: 'Bob',
+    occupation: 'programmer',
+    awesomeIndex: 7,
     },
     {
-      name: 'Alice',
-      occupation: 'programmer',
-      awesomeIndex: 9,
+    name: 'Alice',
+    occupation: 'programmer',
+    awesomeIndex: 9,
     },
     {
-      name: 'Jan',
-      occupation: 'programmer',
-      awesomeIndex: 11,
-    },
-    {
-      // inserting as a non-programmer
-      name: 'Derrick',
-      occupation: 'not a programmer',
-      awesomeIndex: 12,
-    },
-    {
-      name: 'Zaphod',
-      occupation: 'President of the Galaxy' // note: not a programmer
+    name: 'Zaphod',
+    occupation: 'President of the Galaxy' // note: not a programmer
     }
   ];
+
+  // jQuery and lodash implementation
 
   function computeAverage (anArray) {
     var average, sum = 0, count = 0; // initialize variables
