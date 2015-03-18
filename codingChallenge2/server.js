@@ -49,7 +49,6 @@ var server = http.createServer(function(request, response) {
         response.end();
         } // end else
       }); // end .readFile
-    } // end function
-  ); // end .createServer
-server.listen(port); // the server listens on port 3000
+    }); // end .createServer
+server.listen(port); // the server listens on port specified by variable port
 console.log("node.js server active"); // display a console message that the server is live
