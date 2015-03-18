@@ -22,7 +22,7 @@ fs.writeFile("index.html", htmlInject(), function(err) {
   if (err) { // if an error is thrown
     return console.log(err); // print the error to console log
   } // end if
-  console.log("htmlInject.js > test.html"); // confirmation log
+  console.log("htmlInject.js > index.html"); // confirmation log
 });
 
 // create a http server; assign it to variable server
