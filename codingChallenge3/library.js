@@ -13,7 +13,7 @@ function Library(name) {
 
 Library.prototype.addShelf = function(name) {
   this.shelves.push(new Shelf(name));
-} // end addShelf
+}; // end addShelf
 
 Library.prototype.removeShelf = function(searchKey) {
   // loop through each shelf in the this.shelves array
@@ -23,4 +23,4 @@ Library.prototype.removeShelf = function(searchKey) {
       this.shelves.splice(i, 1); // remove it from the array
     } // end if
   } // end for
-} // end removeShelf
+}; // end removeShelf
